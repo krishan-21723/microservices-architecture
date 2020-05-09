@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: add API
+  version: '1.0'
+  description: MAnage add operation
+servers:
+  - url: 'http://localhost:8081'
+paths:
+  '/add/{first}/{second}':
+    parameters:
+      - schema:
+          type: string
+        name: first
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: second
+        in: path
+        required: true
+    get:
+      summary: added number
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: number
+      operationId: get-add-first-second
+  '/add/{id}':
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+      operationId: get-add
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+components:
+  schemas: {}
+  securitySchemes:
+    add key:
+      name: apiKey
+      type: apiKey
+      in: query

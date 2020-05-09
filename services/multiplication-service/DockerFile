@@ -1,0 +1,3 @@
+FROM openjdk:latest
+ADD target/multiplication-service-0.0.1-SNAPSHOT.jar multiplication-service-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","multiplication-service-0.0.1-SNAPSHOT.jar"]
